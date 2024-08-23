@@ -3,7 +3,7 @@ FROM alpine:3.19
 ARG ALPINE_VERSION=3.19
 
 LABEL Maintainer="Ahmad Mohammadi <ahmadmohammadi940@gmail.com>" \
-      Description="Lightweight container with Nginx 1.24 & Go based on Alpine Linux."
+    Description="Lightweight container with Nginx 1.24 & Go based on Alpine Linux."
 
 RUN echo https://mirrors.pardisco.co/alpine/v$ALPINE_VERSION/main > /etc/apk/repositories
 RUN echo https://mirrors.pardisco.co/alpine/v$ALPINE_VERSION/community >> /etc/apk/repositories
@@ -32,6 +32,12 @@ COPY --from=golang:1.23 /usr/local/go/ /usr/local/go/
 # RUN echo "export PATH=$PATH" >> /etc/profile
 RUN ln -s /usr/local/go/bin/go /usr/bin/go
 RUN chown -R www-data.www-data /usr/bin/go
+
+RUN mkdir -p /var/www/html
+WORKDIR /var/www
+
+RUN curl -L https://github.com/golang-migrate/migrate/releases/download/v4.17.1/migrate.linux-amd64.tar.gz | tar xvz
+RUN ln -s /var/www/migrate  /usr/bin/migrate
 
 # download go tar 
 # RUN wget -O go.tgz https://dl.google.com/go/go1.10.3.src.tar.gz 

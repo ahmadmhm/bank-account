@@ -1,0 +1,10 @@
+@create migration
+migrate create -ext sql -dir database/migrations -seq init_schema
+
+@up migrations
+migrate -path database/migrations -database "postgresql://bank_ag_db_user:123456@bank-postgres:5432/bank_a
+g_db?sslmode=disable" -verbose up
+
+@down migrations
+migrate -path database/migrations -database "postgresql://bank_ag_db_user:123456@bank-postgres:5432/bank_a
+g_db?sslmode=disable" -verbose down

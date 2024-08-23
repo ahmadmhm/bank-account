@@ -75,5 +75,5 @@ shell:
 shell-as-root:
 	docker compose -f $(COMPOSE_FILES) exec  --user=root app ash
 
-git:
+git-p-b:
 	git pull --rebase
