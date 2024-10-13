@@ -5,8 +5,8 @@ ARG ALPINE_VERSION=3.19
 LABEL Maintainer="Ahmad Mohammadi <ahmadmohammadi940@gmail.com>" \
     Description="Lightweight container with Nginx 1.24 & Go based on Alpine Linux."
 
-RUN echo https://mirrors.pardisco.co/alpine/v$ALPINE_VERSION/main > /etc/apk/repositories
-RUN echo https://mirrors.pardisco.co/alpine/v$ALPINE_VERSION/community >> /etc/apk/repositories
+RUN echo https://mirrors.pardisco.co/alpine/v$ALPINE_VERSION/main > /etc/apk/repositories \
+    echo https://mirrors.pardisco.co/alpine/v$ALPINE_VERSION/community >> /etc/apk/repositories
 
 # Install packages and remove default server definition
 
@@ -30,10 +30,11 @@ RUN set -x \
 COPY --from=golang:1.23 /usr/local/go/ /usr/local/go/
 # ENV PATH="/usr/local/go/bin:${PATH}"
 # RUN echo "export PATH=$PATH" >> /etc/profile
-RUN ln -s /usr/local/go/bin/go /usr/bin/go
-RUN chown -R www-data.www-data /usr/bin/go
+RUN ln -s /usr/local/go/bin/go /usr/bin/go \
+    chown -R www-data.www-data /usr/bin/go \
+    go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest \
+    mkdir -p /var/www/html
 
-RUN mkdir -p /var/www/html
 WORKDIR /var/www
 
 RUN curl -L https://github.com/golang-migrate/migrate/releases/download/v4.17.1/migrate.linux-amd64.tar.gz | tar xvz
