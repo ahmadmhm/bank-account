@@ -3,7 +3,7 @@
 //   sqlc v1.27.0
 // source: dbsql.sql
 
-package pdb
+package bankAccount
 
 import (
 	"context"

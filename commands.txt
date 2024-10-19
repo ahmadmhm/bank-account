@@ -8,3 +8,6 @@ g_db?sslmode=disable" -verbose up
 @down migrations
 migrate -path database/migrations -database "postgresql://bank_ag_db_user:123456@bank-postgres:5432/bank_a
 g_db?sslmode=disable" -verbose down
+
+@run tests
+go test -v ./pdb
