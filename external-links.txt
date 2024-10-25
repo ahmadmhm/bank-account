@@ -1,0 +1,51 @@
+
+001 Github-repository-of-the-course
+https://github.com/techschool/simplebank
+
+001 DB-diagram-website
+https://dbdiagram.io/home
+
+001 Join-our-Discord-group-to-discuss-ask-questions-and-share-knowledge-with-each-other
+https://discord.gg/BksFFXu
+
+001 Learn-basic-Go-syntax-on-the-Tour-of-Go-webiste
+https://go.dev/tour
+
+002 Microsoft-documentation-page-Install-WSL
+https://learn.microsoft.com/en-us/windows/wsl/install
+
+004 Table-Plus-website
+https://tableplus.com/
+
+004 Download-Docker-Desktop-available-for-Mac-Windows-Linux-
+https://www.docker.com/products/docker-desktop/
+
+004 Troubleshooting-role-root-doesnt-exist
+https://drive.google.com/file/d/1BAx4KXRodZGmY-kXt1_q_FE-6hjlHTqK/view?usp=sharing
+
+004 Join-Discord-group-to-chat-directly-with-me
+https://bit.ly/techschooldc
+
+004 Other-open-source-DB-clients
+https://medevel.com/17-sql-client-open-source/
+
+005 How-to-make-a-beautiful-terminal-with-Oh-my-zsh-
+https://youtu.be/OWkLmY6rEQU
+
+005 Join-Discord-group-to-ask-questions-directly
+https://bit.ly/techschooldc
+
+005 Learn-basic-Go-syntax-on-the-Tour-of-Go-website
+https://go.dev/tour
+
+005 How-to-install-migrate-CLI-on-Linux-or-Windows-WSL
+https://github.com/golang-migrate/migrate/tree/master/cmd/migrate#linux-deb-package
+
+006 A-tour-of-Go-for-those-whos-new-to-the-language-
+https://go.dev/tour/welcome/1
+
+006 Join-Discord-group-to-get-help-if-you-got-stuck
+https://bit.ly/techschooldc
+
+006 Sqlcs-documentation-page
+https://docs.sqlc.dev/en/stable/overview/install.html
