@@ -5,7 +5,7 @@
 package bankAccount
 
 import (
-	"github.com/jackc/pgx/v5/pgtype"
+	"time"
 )
 
 type Account struct {
@@ -13,14 +13,14 @@ type Account struct {
 	Owner     string
 	Balance   int64
 	Currency  string
-	CreatedAt pgtype.Timestamptz
+	CreatedAt time.Time
 }
 
 type Entry struct {
 	ID        int64
 	AccountID int64
 	Amount    int64
-	CreatedAt pgtype.Timestamptz
+	CreatedAt time.Time
 }
 
 type Transfer struct {
@@ -28,5 +28,5 @@ type Transfer struct {
 	FromAccountID int64
 	ToAccountID   int64
 	Amount        int64
-	CreatedAt     pgtype.Timestamptz
+	CreatedAt     time.Time
 }

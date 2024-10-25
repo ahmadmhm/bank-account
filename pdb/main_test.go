@@ -23,7 +23,7 @@ func TestMain(m *testing.M) {
         log.Fatal("cannot connect to database: ", err)
     }
     testQueries = New(conn)
-    fmt.Printf("connected successfully ")
+    fmt.Println("connected successfully ")
     os.Exit(m.Run())
 }
 

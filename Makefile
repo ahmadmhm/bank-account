@@ -1,6 +1,7 @@
 COMPOSE_FILES=./docker-compose.dev.yml
 POSTGRES_COMPOSE_FILES=./.docker/docker-compose-postgres.yml
 DB_URL="postgresql://bank_ag_db_user:123456@bank-postgres:5432/bank_ag_db?sslmode=disable"
+TEST_URL="./pdb/"
 
 help:
 	@echo "";
@@ -84,3 +85,6 @@ migrate-up:
 
 migrate-down:
 	migrate -path database/migrations -database $(DB_URL) -verbose down
+
+run-tests:
+	go clean -testcache && go test -v -cover ${TEST_URL}

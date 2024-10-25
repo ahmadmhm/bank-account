@@ -1,3 +1,6 @@
+@document link
+https://github.com/techschool/simplebank/tree/master
+
 @create migration
 migrate create -ext sql -dir database/migrations -seq init_schema
 
@@ -9,5 +12,5 @@ g_db?sslmode=disable" -verbose up
 migrate -path database/migrations -database "postgresql://bank_ag_db_user:123456@bank-postgres:5432/bank_a
 g_db?sslmode=disable" -verbose down
 
-@run tests
-go test -v ./pdb
+@run tests with coverage
+go clean -testcache && go test -v -cover ./pdb/
